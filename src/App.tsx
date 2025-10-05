@@ -11,6 +11,7 @@ import Resume from './components/Resume';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 function App() {
   return (
@@ -74,6 +75,9 @@ function App() {
         </main>
 
         <Footer />
+        
+        {/* Floating Language Switcher */}
+        <LanguageSwitcher />
       </div>
     </div>
   );
