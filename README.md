@@ -1,13 +1,13 @@
 # 🚀 Hamza Ayari - Portfolio
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://portfolio-mz8w2abfl-hamzas-projects-b9afd234.vercel.app)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-00d9ff?style=for-the-badge&logo=google-chrome&logoColor=white)](https://portfolio-mz8w2abfl-hamzas-projects-b9afd234.vercel.app)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://portfolio-liard-two-nd8q6jb4em.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-00d9ff?style=for-the-badge&logo=google-chrome&logoColor=white)](https://portfolio-liard-two-nd8q6jb4em.vercel.app)
 
 > A modern, responsive portfolio website showcasing my projects, skills, and professional experience.
 
 ## 🌐 Live Demo
 
-**🔗 [View Live Portfolio](https://portfolio-mz8w2abfl-hamzas-projects-b9afd234.vercel.app)**
+**🔗 [View Live Portfolio](https://portfolio-liard-two-nd8q6jb4em.vercel.app)**
 
 ## ✨ Features
 
