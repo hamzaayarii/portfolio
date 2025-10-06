@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Instagram, Facebook, MapPin, Mail, CheckCircle, AlertCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, CheckCircle, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -14,11 +14,36 @@ export default function Contact() {
   const myEmail = 'hamzaayari2026@gmail.com';
 
   const socials = [
-    { icon: Github, label: 'GitHub', href: 'https://github.com/hamzaayarii', color: 'hover:bg-gray-700' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/hamza-ayari-9003aa23b', color: 'hover:bg-blue-700' },
-    { icon: Twitter, label: 'Twitter', href: '#', color: 'hover:bg-blue-500' },
-    { icon: Instagram, label: 'Instagram', href: '#', color: 'hover:bg-cyan-600' },
-    { icon: Facebook, label: 'Facebook', href: '#', color: 'hover:bg-blue-600' }
+    { 
+      icon: Github, 
+      label: 'GitHub', 
+      href: 'https://github.com/hamzaayarii', 
+      value: '@hamzaayarii'
+    },
+    { 
+      icon: Linkedin, 
+      label: 'LinkedIn', 
+      href: 'https://www.linkedin.com/in/hamza-ayari-9003aa23b', 
+      value: 'Hamza Ayari'
+    },
+    { 
+      icon: Mail, 
+      label: 'Gmail', 
+      href: 'mailto:hamzaayari2026@gmail.com', 
+      value: 'hamzaayari2026@gmail.com'
+    },
+    { 
+      icon: Phone, 
+      label: 'Phone', 
+      href: 'tel:+21694790040', 
+      value: '+216 94 790 040'
+    },
+    { 
+      icon: MapPin, 
+      label: 'Location', 
+      href: '#', 
+      value: 'Remote / On-site'
+    }
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -182,7 +207,7 @@ export default function Contact() {
             </div>
 
             <p className="text-gray-300 mb-8">
-              Follow me on social media to stay updated with my latest projects and activities.
+              Let's connect! Reach out through any of these channels.
             </p>
 
             <div className="space-y-4">
@@ -190,12 +215,24 @@ export default function Contact() {
                 <a
                   key={index}
                   href={social.href}
-                  target="_blank"
+                  target={social.label !== 'Location' ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className={`group flex items-center gap-4 bg-slate-900/50 border border-cyan-500/30 rounded-xl px-6 py-4 transition-all hover:border-cyan-500 hover:bg-cyan-500/10 hover:translate-x-2 duration-300`}
+                  className="group flex items-center justify-between bg-gradient-to-r from-slate-900/50 to-slate-800/50 border border-cyan-500/30 rounded-xl px-6 py-4 transition-all hover:border-cyan-500 hover:from-cyan-500/10 hover:to-teal-500/10 hover:translate-x-2 duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
                 >
-                  <social.icon size={24} className="text-cyan-400 group-hover:scale-110 transition-transform" />
-                  <span className="text-white font-medium">{social.label}</span>
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-all">
+                      <social.icon size={24} className="text-cyan-400 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold group-hover:text-cyan-400 transition-colors">{social.label}</p>
+                      <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">{social.value}</p>
+                    </div>
+                  </div>
+                  <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1">
+                    <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </a>
               ))}
             </div>

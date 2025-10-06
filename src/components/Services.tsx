@@ -1,89 +1,122 @@
-import { Monitor, Smartphone, Hexagon } from 'lucide-react';
+import { Lightbulb, Rocket, Code2, CheckCircle2, Zap } from 'lucide-react';
 
 export default function Services() {
   const services = [
     {
-      icon: Monitor,
-      title: 'Web Development',
-      description: 'Elegant, scalable, and easy to use responsive web applications build using modern technologies and best practices.',
-      tags: ['React', 'Nextjs', 'Angular', 'OpenAI', 'Spring Boot']
+      icon: Lightbulb,
+      iconColor: 'from-purple-500 to-pink-500',
+      title: 'AI Project Development',
+      description: 'End-to-end AI solution development from concept to production deployment.',
+      keyFeatures: [
+        'Machine Learning Model Development',
+        'Computer Vision & NLP Solutions',
+        'MLOps Pipeline Implementation',
+        'Performance Optimization & Scaling'
+      ],
+      technologies: ['Python', 'TensorFlow', 'PyTorch', 'MLflow', 'Docker', 'Kubernetes'],
+      deliverables: 'Production-ready AI models with comprehensive documentation'
     },
     {
-      icon: Smartphone,
-      title: 'Mobile Application',
-      description: 'Optimized native applications with intuitive UIs, powered by scalable back-ends, tailored for your business requirements.',
-      tags: ['React Native', 'Flutter', 'FireBase', 'Swift']
-    },
-    {
-      icon: Hexagon,
-      title: 'Blockchain Development',
-      description: 'Next-generation blockchain applications that combine security, transparency and usability for the web3 ecosystem.',
-      tags: ['Solidity', 'Web3j', 'Ethereum', 'Smart Contracts']
+      icon: Rocket,
+      iconColor: 'from-orange-500 to-red-500',
+      title: 'MVP Development for Startups',
+      description: 'Rapid prototyping and MVP development to validate your startup ideas quickly.',
+      keyFeatures: [
+        'Rapid Prototype Development',
+        'Full-Stack Web Applications',
+        'API Development & Integration',
+        'Cloud Deployment & Scalability'
+      ],
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Docker', 'CI/CD'],
+      deliverables: 'Functional MVP ready for user testing and investor demos'
     }
   ];
 
   return (
-    <section className="relative py-20">
+    <section id="services" className="relative py-20">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            My <span className="gradient-text">Services</span>
+          <div className="inline-block mb-4">
+            <span className="text-cyan-400 font-semibold text-sm tracking-wider uppercase">What I Offer</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            My <span className="gradient-text glow-effect">Services</span>
           </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto">
-            I provide comprehensive solutions for your digital needs with cutting-edge technologies.
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+            Transforming ideas into stunning, high-performance web applications that bring visions to life
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-teal-500 mx-auto mt-6 rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <div
               key={index}
-              className="card-hover bg-gradient-to-br from-cyan-900/20 to-teal-900/20 border border-cyan-500/30 rounded-xl p-8 backdrop-blur-sm"
+              className="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-cyan-500/30 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300 shadow-xl hover:shadow-cyan-500/20 hover:scale-[1.02]"
             >
-              <div className="flex justify-center mb-6">
-                <div className="bg-cyan-500/20 p-4 rounded-lg">
-                  <service.icon size={40} className="text-cyan-400" />
+              {/* Icon */}
+              <div className="mb-6">
+                <div className={`inline-flex p-4 bg-gradient-to-br ${service.iconColor} rounded-xl shadow-lg`}>
+                  <service.icon className="w-8 h-8 text-white" />
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-center mb-4 text-white">
+              {/* Title & Description */}
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
                 {service.title}
               </h3>
-
-              <p className="text-gray-300 text-center mb-6 leading-relaxed">
+              <p className="text-gray-400 mb-6 leading-relaxed">
                 {service.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 justify-center">
-                {service.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className="px-3 py-1 bg-cyan-900/40 border border-cyan-500/30 rounded-full text-sm text-cyan-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              {/* Key Features */}
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                  <h4 className="text-white font-semibold">Key Features</h4>
+                </div>
+                <ul className="space-y-2">
+                  {service.keyFeatures.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-gray-300 text-sm">
+                      <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Technologies */}
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Code2 className="w-5 h-5 text-cyan-400" />
+                  <h4 className="text-white font-semibold">Technologies</h4>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {service.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 bg-slate-700/50 hover:bg-cyan-500/20 border border-slate-600/50 hover:border-cyan-500/50 rounded-lg text-xs text-gray-300 hover:text-cyan-400 transition-all duration-300 cursor-default"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Deliverables */}
+              <div className="pt-4 border-t border-slate-700/50">
+                <div className="flex items-start gap-2">
+                  <Zap className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-white font-semibold mb-1 text-sm">Deliverables</h4>
+                    <p className="text-gray-400 text-sm">{service.deliverables}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-20 text-center">
-          <div className="inline-block bg-gradient-to-br from-cyan-900/40 to-teal-900/40 border border-cyan-500/30 rounded-xl p-12 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">#OpenToWork</h3>
-            <p className="text-xl mb-6 text-white">Need a Platform Engineer?</p>
-            <p className="text-gray-300 max-w-2xl mb-8">
-              I provide freelance services in software development, system architecture, code optimization.
-              With extensive experience in various technologies, I can deliver high-quality, scalable solutions
-              tailored to your business needs.
-            </p>
-            <p className="text-gray-300 mb-8">
-              Let's collaborate to bring your projects to life.
-            </p>
-            <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Get in touch
-            </button>
-          </div>
         </div>
       </div>
     </section>

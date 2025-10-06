@@ -23,8 +23,11 @@ export default function Projects() {
       tags: ['Web', 'Backend', 'Machine Learning'],
       technologies: ['React.js', 'Express.js', 'MongoDB', 'Socket.IO', 'ML', 'RAG Chatbot'],
       period: 'January 2025 - May 2025',
-      github: '',
-      demo: ''
+      badge: 'Featured',
+      badgeColor: 'from-purple-500 to-pink-500',
+      iconBg: 'from-purple-600/20 to-pink-600/20',
+      github: 'https://github.com/hamzaayarii',
+      demo: 'https://portfolio-liard-two-nd8q6jb4em.vercel.app'
     },
     {
       title: 'DevOps CI/CD Project',
@@ -33,8 +36,11 @@ export default function Projects() {
       tags: ['DevOps', 'Backend', 'Web'],
       technologies: ['Jenkins', 'Maven', 'JUnit', 'Karma/Jasmine', 'Docker', 'SonarQube', 'Prometheus', 'Grafana'],
       period: 'February 2025 - April 2025',
-      github: '',
-      demo: ''
+      badge: 'Featured',
+      badgeColor: 'from-green-500 to-emerald-500',
+      iconBg: 'from-green-600/20 to-emerald-600/20',
+      github: 'https://github.com/hamzaayarii',
+      demo: 'https://portfolio-liard-two-nd8q6jb4em.vercel.app'
     },
     {
       title: 'Batah.tn - E-Commerce Platform',
@@ -43,8 +49,11 @@ export default function Projects() {
       tags: ['Web', 'Backend', 'E-Commerce'],
       technologies: ['Java', 'Symfony', 'MySQL', 'Git', 'Google Maps API', 'Stripe'],
       period: 'January 2024 - May 2024',
-      github: '',
-      demo: ''
+      badge: '',
+      badgeColor: 'from-cyan-500 to-blue-500',
+      iconBg: 'from-cyan-600/20 to-blue-600/20',
+      github: 'https://github.com/hamzaayarii',
+      demo: 'https://portfolio-liard-two-nd8q6jb4em.vercel.app'
     },
     {
       title: 'Smart Technical Visit Center',
@@ -53,7 +62,10 @@ export default function Projects() {
       tags: ['Desktop', 'IoT'],
       technologies: ['Qt', 'C++', 'Arduino', 'SQL'],
       period: 'January 2023 - May 2023',
-      github: '',
+      badge: '',
+      badgeColor: 'from-red-500 to-orange-500',
+      iconBg: 'from-red-600/20 to-orange-600/20',
+      github: 'https://github.com/hamzaayarii',
       demo: ''
     },
     {
@@ -63,99 +75,127 @@ export default function Projects() {
       tags: ['Web', 'Backend'],
       technologies: ['HTML', 'CSS', 'PHP', 'MySQL', 'GitHub'],
       period: 'January 2022 - May 2022',
-      github: '',
+      badge: '',
+      badgeColor: 'from-indigo-500 to-purple-500',
+      iconBg: 'from-indigo-600/20 to-purple-600/20',
+      github: 'https://github.com/hamzaayarii',
       demo: ''
     }
   ];
 
+  // Filter projects based on selected filter
+  const filteredProjects = selectedFilter === 'All' 
+    ? projects 
+    : projects.filter(project => project.tags.includes(selectedFilter));
+
   return (
     <section id="projects" className="relative py-20">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            My Creative <span className="gradient-text">Portfolio</span>
+          <div className="inline-block mb-4">
+            <span className="text-cyan-400 font-semibold text-sm tracking-wider uppercase">My Work</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Featured <span className="gradient-text glow-effect">Projects</span>
           </h2>
-          <p className="text-gray-400">Here are some of the projects I've worked on</p>
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+            Showcasing innovative web solutions and machine learning applications
+          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-teal-500 mx-auto mt-6 rounded-full"></div>
         </div>
 
+        {/* Filter Buttons */}
         <div className="flex flex-wrap gap-3 mb-12 justify-center">
           {filters.map((filter) => (
             <button
               key={filter.label}
               onClick={() => setSelectedFilter(filter.label)}
-              className={`px-4 py-2 rounded-full transition-all ${
+              className={`px-4 py-2 rounded-full transition-all duration-300 ${
                 selectedFilter === filter.label
-                  ? 'bg-cyan-600 text-white'
-                  : 'bg-cyan-900/40 text-gray-300 hover:bg-cyan-800/40 border border-cyan-500/30'
+                  ? 'bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-lg shadow-cyan-500/50 scale-105'
+                  : 'bg-slate-800/50 text-gray-300 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-500/50 hover:scale-105'
               }`}
             >
-              {filter.label} <span className="text-xs ml-1">{filter.count}</span>
+              {filter.label} <span className="text-xs ml-1 opacity-75">{filter.count}</span>
             </button>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className="card-hover bg-gradient-to-br from-cyan-900/20 to-teal-900/20 border border-cyan-500/30 rounded-xl overflow-hidden backdrop-blur-sm group"
+              className="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-cyan-500/30 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:scale-[1.02]"
             >
-              <div className="relative overflow-hidden h-64">
+              {/* Image Section with Gradient Overlay */}
+              <div className="relative overflow-hidden h-56">
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.iconBg} opacity-50 group-hover:opacity-70 transition-opacity duration-500 z-10`}></div>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-2 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a1a] to-transparent"></div>
+                
+                {/* Featured Badge */}
+                {project.badge && (
+                  <div className="absolute top-4 right-4 z-20">
+                    <span className={`px-3 py-1 bg-gradient-to-r ${project.badgeColor} text-white text-xs font-bold rounded-full shadow-lg animate-pulse`}>
+                      {project.badge}
+                    </span>
+                  </div>
+                )}
+
+                {/* Hover Overlay with Links */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 flex items-center justify-center gap-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-xl hover:bg-cyan-500 hover:border-cyan-500 flex items-center gap-2 font-semibold"
+                  >
+                    <Github size={20} />
+                    View Code
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-xl hover:bg-teal-500 hover:border-teal-500 flex items-center gap-2 font-semibold"
+                    >
+                      <Play size={20} />
+                      Live Demo
+                    </a>
+                  )}
+                </div>
               </div>
 
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-2xl font-bold gradient-text">{project.title}</h3>
-                </div>
-                <p className="text-xs text-cyan-400 mb-3">{project.period}</p>
-                <p className="text-gray-300 mb-4 leading-relaxed text-sm">{project.description}</p>
+              {/* Content Section */}
+              <div className="p-6 space-y-4">
+                {/* Title */}
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                  {project.title}
+                </h3>
 
-                <div className="mb-3">
-                  <p className="text-xs text-gray-400 mb-2">Technologies:</p>
+                {/* Description */}
+                <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-cyan-900/40 border border-cyan-500/30 rounded text-xs text-cyan-300"
+                        className="px-2 py-1 bg-slate-700/50 border border-slate-600/50 rounded text-xs text-gray-300 hover:bg-cyan-500/20 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 cursor-default"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 bg-teal-900/40 border border-teal-500/30 rounded-full text-xs text-teal-300 font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-3">
-                  <button 
-                    className="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-                    disabled={!project.github}
-                  >
-                    <Github size={16} />
-                    GitHub
-                  </button>
-                  <button 
-                    className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-                    disabled={!project.demo}
-                  >
-                    <Play size={16} />
-                    Demo
-                  </button>
                 </div>
               </div>
             </div>

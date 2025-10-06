@@ -1,62 +1,61 @@
-export default function About() {
+﻿export default function About() {
   return (
-    <section id="about" className="relative py-32">
+    <section id="education" className="relative py-20">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="text-cyan-400 font-semibold text-sm tracking-wider uppercase">Get to know me</span>
+            <span className="text-cyan-400 font-semibold text-sm tracking-wider uppercase">My Background</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            LET ME <span className="gradient-text glow-effect">INTRODUCE</span> MYSELF
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="gradient-text glow-effect">Education</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-teal-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1 space-y-6 text-gray-300">
-            <div className="bg-slate-800/30 border border-cyan-500/20 rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300">
-              <p className="text-lg leading-relaxed">
-                👋 Hi! I'm a passionate <span className="text-cyan-400 font-semibold">Software Engineering Student</span> with 
-                a strong focus on creating innovative solutions and learning new technologies every day.
-              </p>
-            </div>
-
-            <div className="bg-slate-800/30 border border-cyan-500/20 rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300">
-              <p className="text-lg leading-relaxed">
-                💻 I specialize in <span className="text-cyan-400 font-semibold">Full Stack Development</span> and <span className="text-cyan-400 font-semibold">DevOps</span>, 
-                building modern web applications with cutting-edge technologies.
-              </p>
-            </div>
-
-            <div className="bg-slate-800/30 border border-cyan-500/20 rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300">
-              <p className="text-lg leading-relaxed">
-                🚀 My tech stack includes <span className="text-cyan-400 font-semibold">React, Node.js, Python, Docker, Kubernetes</span>, 
-                and I'm always excited to explore emerging technologies.
-              </p>
-            </div>
-
-            <div className="bg-slate-800/30 border border-cyan-500/20 rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300">
-              <p className="text-lg leading-relaxed">
-                🎯 I believe in continuous learning, clean code, and building products that make a real impact. 
-                Let's create something amazing together!
-              </p>
-            </div>
-          </div>
-
-          <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-teal-500/30 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-              <div className="relative">
-                <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-cyan-500/40 shadow-2xl shadow-cyan-500/30 transform group-hover:scale-105 transition-all duration-500">
-                  <img
-                    src="/hamza.png"
-                    alt="Hamza Ayari"
-                    className="w-full h-full object-cover"
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-cyan-500/30 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300 shadow-xl">
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                  <img 
+                    src="/esprit-logo.png" 
+                    alt="ESPRIT Logo" 
+                    className="w-12 h-12 object-contain"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      const parent = e.currentTarget.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<span class="text-cyan-600 font-bold text-xl">ESPRIT</span>';
+                      }
+                    }}
                   />
                 </div>
-                {/* Decorative rings */}
-                <div className="absolute inset-0 rounded-full border-2 border-cyan-400/20 scale-110 animate-pulse"></div>
-                <div className="absolute inset-0 rounded-full border-2 border-teal-400/20 scale-125 animate-pulse" style={{ animationDelay: '1s' }}></div>
+              </div>
+
+              <div className="flex-1 space-y-4">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                  <h3 className="text-2xl font-bold text-white">ESPRIT Engineering School</h3>
+                  <span className="inline-flex items-center px-4 py-1 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-cyan-400 text-sm font-semibold">
+                    Completed
+                  </span>
+                </div>
+
+                <div>
+                  <p className="text-cyan-400 font-semibold text-lg mb-1">
+                    Software Engineering Degree
+                  </p>
+                  <p className="text-gray-400 text-sm flex flex-wrap items-center gap-2">
+                    <span>September 2021 - August 2026</span>
+                    <span></span>
+                    <span>Tunis, Tunisia</span>
+                  </p>
+                </div>
+
+                <div className="pt-2">
+                  <p className="text-gray-300 leading-relaxed">
+                    Specialization in <span className="text-cyan-400 font-semibold">Web and Internet Technologies (TWIN)</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -15,45 +15,53 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-cyan-950 to-teal-950 relative overflow-hidden">
-      {/* Animated gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Large cyan orb - top left */}
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl animate-float"></div>
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Animated Mesh Gradient Background */}
+      <div className="fixed inset-0 bg-gradient-to-br from-[#0a0f1c] via-[#0d1425] to-[#0a1628] -z-10"></div>
+      
+      {/* Animated Gradient Orbs */}
+      <div className="fixed inset-0 overflow-hidden -z-10">
+        {/* Primary cyan orb */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/30 rounded-full mix-blend-multiply filter blur-[120px] animate-blob"></div>
         
-        {/* Teal orb - top right */}
-        <div className="absolute -top-20 right-20 w-80 h-80 bg-teal-500/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        {/* Secondary teal orb */}
+        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-teal-500/30 rounded-full mix-blend-multiply filter blur-[120px] animate-blob animation-delay-2000"></div>
         
-        {/* Emerald orb - middle left */}
-        <div className="absolute top-1/3 -left-32 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        {/* Tertiary purple orb */}
+        <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-purple-500/20 rounded-full mix-blend-multiply filter blur-[120px] animate-blob animation-delay-4000"></div>
         
-        {/* Cyan orb - middle right */}
-        <div className="absolute top-1/2 -right-32 w-96 h-96 bg-cyan-400/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        {/* Emerald accent */}
+        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-emerald-500/20 rounded-full mix-blend-multiply filter blur-[100px] animate-blob animation-delay-3000"></div>
         
-        {/* Purple-blue orb - bottom left */}
-        <div className="absolute bottom-20 left-40 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
-        
-        {/* Teal orb - bottom right */}
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-teal-400/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '5s' }}></div>
+        {/* Pink accent */}
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-pink-500/15 rounded-full mix-blend-multiply filter blur-[100px] animate-blob animation-delay-5000"></div>
       </div>
 
-      {/* Animated grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
+      {/* Animated Grid Pattern */}
+      <div className="fixed inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black_40%,transparent)] animate-grid -z-10"></div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+      {/* Floating Particles */}
+      <div className="fixed inset-0 overflow-hidden -z-10">
+        {[...Array(50)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-cyan-400/40 rounded-full animate-float"
+            className="absolute rounded-full animate-float-slow"
             style={{
-              left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
+              width: `${1 + Math.random() * 3}px`,
+              height: `${1 + Math.random() * 3}px`,
+              background: i % 3 === 0 ? 'rgba(6,182,212,0.6)' : i % 3 === 1 ? 'rgba(20,184,166,0.6)' : 'rgba(16,185,129,0.6)',
               animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${5 + Math.random() * 10}s`,
+              animationDuration: `${10 + Math.random() * 20}s`,
+              boxShadow: '0 0 10px currentColor',
             }}
           ></div>
         ))}
+      </div>
+
+      {/* Scanning Lines Effect */}
+      <div className="fixed inset-0 overflow-hidden -z-10 opacity-30">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent h-[200px] animate-scan"></div>
       </div>
 
       <Starfield />
