@@ -83,12 +83,12 @@ export default function Skills() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="text-cyan-400 font-semibold text-sm tracking-wider uppercase">My Expertise</span>
+            <span className="text-cyan-400 font-semibold text-sm tracking-widest uppercase">My Expertise</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Skills & <span className="gradient-text glow-effect">Technologies</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Mastering cutting-edge technologies across AI, machine learning, and full-stack development to build intelligent, scalable solutions
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-teal-500 mx-auto mt-6 rounded-full"></div>

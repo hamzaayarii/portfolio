@@ -39,15 +39,12 @@ export default function Hero() {
           {/* Professional Description */}
           <div className="max-w-4xl">
             <p className="text-gray-300 text-base md:text-lg lg:text-xl leading-relaxed">
-              Full Stack Developer and Cloud Engineer, with expertise in <span className="text-cyan-400 font-semibold">React</span>, 
+              Full Stack Developer and DevOps Engineer, with expertise in <span className="text-cyan-400 font-semibold">React</span>, 
               <span className="text-cyan-400 font-semibold"> Node.js</span>, 
               <span className="text-cyan-400 font-semibold"> Docker</span>, and 
               <span className="text-cyan-400 font-semibold"> AWS</span>. 
               Proven track record of deploying production-ready applications, developing intelligent automation systems, 
-              and architecting scalable cloud infrastructure. Software Engineering student with hands-on experience across 
-              <span className="text-cyan-400 font-semibold"> France</span>, 
-              <span className="text-cyan-400 font-semibold"> Germany</span>, and 
-              <span className="text-cyan-400 font-semibold"> Tunisia</span>.
+              and architecting scalable cloud infrastructure. Software Engineering student with hands-on experience.
             </p>
           </div>
 

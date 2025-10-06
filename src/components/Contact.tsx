@@ -97,21 +97,21 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
-            <span className="text-cyan-400 font-semibold text-sm tracking-wider uppercase">Get In Touch</span>
+            <span className="text-cyan-400 font-semibold text-sm tracking-widest uppercase">Get In Touch</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Let's <span className="gradient-text glow-effect">Connect</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Have a project in mind or just want to chat? I'd love to hear from you!
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-teal-500 mx-auto rounded-full mt-6"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-slate-800/30 border border-cyan-500/20 rounded-3xl p-8 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300">
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-cyan-500/30 rounded-2xl p-8 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300 shadow-xl hover:shadow-cyan-500/20">
             <div className="border-b border-cyan-500/20 pb-4 mb-6">
-              <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+              <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-2">
                 <Mail className="text-cyan-400" size={28} />
                 Drop Me a Message
               </h3>
@@ -201,12 +201,12 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-slate-800/30 border border-cyan-500/20 rounded-3xl p-8 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300">
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-cyan-500/30 rounded-2xl p-8 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300 shadow-xl hover:shadow-cyan-500/20">
             <div className="border-b border-cyan-500/20 pb-4 mb-6">
-              <h3 className="text-2xl font-bold text-white">Connect With Me</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-white">Connect With Me</h3>
             </div>
 
-            <p className="text-gray-300 mb-8">
+            <p className="text-gray-400 text-lg mb-8 leading-relaxed">
               Let's connect! Reach out through any of these channels.
             </p>
 
