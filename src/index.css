@@ -3,12 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900 text-white;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+  }
+
+  /* Hardware acceleration for animated elements */
+  .animate-blob,
+  .animate-spin,
+  .stars-layer-1,
+  .stars-layer-2,
+  .stars-layer-3 {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 }
 
+/* Optimized Starfield using CSS only - Much better performance */
 .starfield {
   position: fixed;
   top: 0;
@@ -17,115 +41,124 @@
   height: 100%;
   z-index: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
-.star {
+/* Three layers of stars with box-shadow for performance */
+.stars-layer-1,
+.stars-layer-2,
+.stars-layer-3 {
   position: absolute;
-  width: 2px;
-  height: 2px;
-  background: linear-gradient(90deg, #22d3ee, #06b6d4, #14b8a6);
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
-  animation: twinkle 3s infinite, moveStars 30s linear infinite;
-  box-shadow: 0 0 4px rgba(34, 211, 238, 0.8);
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.stars-layer-1 {
+  background: transparent;
+  box-shadow: 
+    10vw 20vh 1px 0px rgba(34, 211, 238, 0.7),
+    25vw 15vh 1px 0px rgba(34, 211, 238, 0.6),
+    40vw 30vh 1px 0px rgba(34, 211, 238, 0.8),
+    55vw 10vh 1px 0px rgba(34, 211, 238, 0.5),
+    70vw 40vh 1px 0px rgba(34, 211, 238, 0.7),
+    85vw 25vh 1px 0px rgba(34, 211, 238, 0.6),
+    15vw 60vh 1px 0px rgba(34, 211, 238, 0.8),
+    30vw 70vh 1px 0px rgba(34, 211, 238, 0.5),
+    45vw 50vh 1px 0px rgba(34, 211, 238, 0.7),
+    60vw 80vh 1px 0px rgba(34, 211, 238, 0.6),
+    75vw 65vh 1px 0px rgba(34, 211, 238, 0.8),
+    90vw 75vh 1px 0px rgba(34, 211, 238, 0.5),
+    5vw 90vh 1px 0px rgba(34, 211, 238, 0.7),
+    20vw 85vh 1px 0px rgba(34, 211, 238, 0.6),
+    35vw 95vh 1px 0px rgba(34, 211, 238, 0.8);
+  animation: moveStars1 50s linear infinite;
+}
+
+.stars-layer-2 {
+  background: transparent;
+  box-shadow: 
+    15vw 25vh 1px 0px rgba(20, 184, 166, 0.6),
+    30vw 10vh 1px 0px rgba(20, 184, 166, 0.7),
+    45vw 35vh 1px 0px rgba(20, 184, 166, 0.5),
+    60vw 15vh 1px 0px rgba(20, 184, 166, 0.8),
+    75vw 45vh 1px 0px rgba(20, 184, 166, 0.6),
+    90vw 30vh 1px 0px rgba(20, 184, 166, 0.7),
+    10vw 65vh 1px 0px rgba(20, 184, 166, 0.5),
+    25vw 75vh 1px 0px rgba(20, 184, 166, 0.8),
+    40vw 55vh 1px 0px rgba(20, 184, 166, 0.6),
+    55vw 85vh 1px 0px rgba(20, 184, 166, 0.7),
+    70vw 70vh 1px 0px rgba(20, 184, 166, 0.5),
+    85vw 80vh 1px 0px rgba(20, 184, 166, 0.8),
+    8vw 88vh 1px 0px rgba(20, 184, 166, 0.6),
+    22vw 92vh 1px 0px rgba(20, 184, 166, 0.7);
+  animation: moveStars2 60s linear infinite;
+}
+
+.stars-layer-3 {
+  background: transparent;
+  box-shadow: 
+    18vw 18vh 1px 0px rgba(16, 185, 129, 0.5),
+    33vw 8vh 1px 0px rgba(16, 185, 129, 0.6),
+    48vw 28vh 1px 0px rgba(16, 185, 129, 0.7),
+    63vw 12vh 1px 0px rgba(16, 185, 129, 0.5),
+    78vw 38vh 1px 0px rgba(16, 185, 129, 0.6),
+    93vw 22vh 1px 0px rgba(16, 185, 129, 0.7),
+    12vw 58vh 1px 0px rgba(16, 185, 129, 0.5),
+    27vw 68vh 1px 0px rgba(16, 185, 129, 0.6),
+    42vw 48vh 1px 0px rgba(16, 185, 129, 0.7),
+    57vw 78vh 1px 0px rgba(16, 185, 129, 0.5),
+    72vw 62vh 1px 0px rgba(16, 185, 129, 0.6),
+    87vw 72vh 1px 0px rgba(16, 185, 129, 0.7);
+  animation: moveStars3 70s linear infinite;
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
 
-@keyframes moveStars {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  100% {
-    transform: translate(-80px, 120px) rotate(360deg);
-  }
+@keyframes moveStars1 {
+  from { transform: translateY(0) translateX(0); }
+  to { transform: translateY(-100vh) translateX(-50px); }
 }
 
-/* New Background Animations */
+@keyframes moveStars2 {
+  from { transform: translateY(0) translateX(0); }
+  to { transform: translateY(-100vh) translateX(50px); }
+}
+
+@keyframes moveStars3 {
+  from { transform: translateY(0) translateX(0); }
+  to { transform: translateY(-100vh) translateX(-30px); }
+}
+
+/* Optimized blob animation */
 @keyframes blob {
   0%, 100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
-  25% {
-    transform: translate(30px, -50px) scale(1.1);
+  33% {
+    transform: translate3d(30px, -30px, 0) scale(1.05);
   }
-  50% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  75% {
-    transform: translate(50px, 50px) scale(1.05);
-  }
-}
-
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0) translateX(0) rotate(0deg);
-    opacity: 0.3;
-  }
-  25% {
-    transform: translateY(-100px) translateX(50px) rotate(90deg);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translateY(-50px) translateX(-50px) rotate(180deg);
-    opacity: 0.5;
-  }
-  75% {
-    transform: translateY(-150px) translateX(30px) rotate(270deg);
-    opacity: 0.8;
-  }
-}
-
-@keyframes grid {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(80px);
-  }
-}
-
-@keyframes scan {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100vh);
+  66% {
+    transform: translate3d(-20px, 20px, 0) scale(0.95);
   }
 }
 
 .animate-blob {
-  animation: blob 15s infinite;
+  animation: blob 15s infinite ease-in-out;
 }
 
 .animation-delay-2000 {
   animation-delay: 2s;
 }
 
-.animation-delay-3000 {
-  animation-delay: 3s;
-}
-
 .animation-delay-4000 {
   animation-delay: 4s;
-}
-
-.animation-delay-5000 {
-  animation-delay: 5s;
-}
-
-.animate-float-slow {
-  animation: float-slow 30s infinite ease-in-out;
-}
-
-.animate-grid {
-  animation: grid 20s linear infinite;
-}
-
-.animate-scan {
-  animation: scan 8s linear infinite;
 }
 
 @keyframes wave {

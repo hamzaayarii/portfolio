@@ -32,7 +32,7 @@ export default function Hero() {
               <span className="gradient-text glow-effect">Full Stack Developer</span>
             </h1>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white">
-              & <span className="text-cyan-400">Cloud & DevOps Engineer</span>
+              & <span className="text-cyan-400">DevOps Engineer</span>
             </h2>
           </div>
 

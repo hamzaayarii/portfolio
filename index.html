@@ -6,8 +6,35 @@
   <link rel="icon" type="image/png" href="/hamza-pic2.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Hamza Ayari - Full Stack Developer, Cloud & DevOps Engineer. Expert in React, Node.js, Docker, and AWS." />
-  <title>Hamza Ayari - Full Stack Developer | Cloud & DevOps Engineer</title>
+    content="Hamza Ayari - Full Stack Developer & DevOps Engineer. Expert in React, Node.js, Docker, and AWS." />
+
+  <!-- Performance optimizations -->
+  <meta name="theme-color" content="#0a0f1c" />
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://api.github.com" />
+
+  <title>Hamza Ayari - Full Stack Developer & DevOps Engineer</title>
+
+  <!-- Critical CSS will be inlined by Vite -->
+  <!-- Preload critical resources -->
+  <link rel="modulepreload" href="/src/main.tsx" />
+
+  <!-- Reduce layout shift -->
+  <style>
+    #root {
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #0f172a, #1e293b, #134e4a);
+    }
+
+    /* Prevent FOUC */
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
+  </style>
 </head>
 
 <body>
