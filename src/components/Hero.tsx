@@ -1,6 +1,61 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function Hero() {
+  const [displayedText1, setDisplayedText1] = useState('');
+  const [displayedText2, setDisplayedText2] = useState('');
+  const fullText1 = 'Full Stack Developer';
+  const fullText2 = '& DevOps Engineer';
+
+  useEffect(() => {
+    const startTyping = () => {
+      let index1 = 0;
+      const timer1 = setInterval(() => {
+        if (index1 <= fullText1.length) {
+          setDisplayedText1(fullText1.slice(0, index1));
+          index1++;
+        } else {
+          clearInterval(timer1);
+          // Start second text after first completes
+          let index2 = 0;
+          const timer2 = setInterval(() => {
+            if (index2 <= fullText2.length) {
+              setDisplayedText2(fullText2.slice(0, index2));
+              index2++;
+            } else {
+              clearInterval(timer2);
+              // Wait 2 seconds, then delete and restart
+              setTimeout(() => {
+                let deleteIndex2 = fullText2.length;
+                const deleteTimer2 = setInterval(() => {
+                  if (deleteIndex2 >= 0) {
+                    setDisplayedText2(fullText2.slice(0, deleteIndex2));
+                    deleteIndex2--;
+                  } else {
+                    clearInterval(deleteTimer2);
+                    // Delete first text
+                    let deleteIndex1 = fullText1.length;
+                    const deleteTimer1 = setInterval(() => {
+                      if (deleteIndex1 >= 0) {
+                        setDisplayedText1(fullText1.slice(0, deleteIndex1));
+                        deleteIndex1--;
+                      } else {
+                        clearInterval(deleteTimer1);
+                        // Wait a bit then restart
+                        setTimeout(startTyping, 500);
+                      }
+                    }, 50);
+                  }
+                }, 50);
+              }, 2000);
+            }
+          }, 80);
+        }
+      }, 100);
+    };
+
+    startTyping();
+  }, []);
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-20">
       <div className="max-w-7xl mx-auto px-6 w-full">
@@ -25,14 +80,22 @@ export default function Hero() {
 
           {/* Greeting Text */}
           <div className="space-y-4 animate-slide-in">
-            <p className="text-gray-400 text-lg md:text-xl">Hey, I'm Hamza Ayari</p>
+            <p className="text-gray-400 text-lg md:text-xl animate-fade-in">Hey, I'm Hamza Ayari</p>
             
-            {/* Main Title */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
-              <span className="gradient-text glow-effect">Full Stack Developer</span>
+            {/* Main Title with Typing Effect */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
+              <span className="gradient-text glow-effect inline-block">
+                {displayedText1}
+                <span className="animate-pulse">|</span>
+              </span>
             </h1>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white">
-              & <span className="text-cyan-400">Cloud & DevOps Engineer</span>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem]">
+              <span className="text-cyan-400 inline-block">
+                {displayedText2}
+                {displayedText2.length > 0 && displayedText2.length < fullText2.length && (
+                  <span className="animate-pulse">|</span>
+                )}
+              </span>
             </h2>
           </div>
 

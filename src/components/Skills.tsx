@@ -29,38 +29,38 @@ export default function Skills() {
     },
     {
       icon: Brain,
-      title: 'Generative & Agentic AI',
+      title: 'AI & Machine Learning',
       skills: [
-        { name: 'LangChain', description: 'Framework for building LLM applications' },
-        { name: 'LangGraph', description: 'Orchestration framework for AI agents' },
-        { name: 'RAG', description: 'Retrieval-Augmented Generation for AI' },
-        { name: 'Vector Databases', description: 'Storage for AI embeddings & semantic search' },
-        { name: 'LLMs', description: 'Large Language Models like GPT & Claude' },
-        { name: 'Agentic Systems', description: 'Autonomous AI agents with decision-making' }
+        { name: 'Python ML', description: 'Basic machine learning with Python' },
+        { name: 'Scikit-learn', description: 'Simple ML models & algorithms' },
+        { name: 'LangChain', description: 'Working with LLM applications' },
+        { name: 'RAG Basics', description: 'Simple retrieval-augmented generation' },
+        { name: 'OpenAI API', description: 'Integrating ChatGPT & GPT models' },
+        { name: 'Hugging Face', description: 'Using pre-trained AI models' }
       ]
     },
     {
       icon: Database,
-      title: 'AI/ML Frameworks',
+      title: 'Data & Visualization',
       skills: [
-        { name: 'TensorFlow', description: 'Deep learning framework by Google' },
-        { name: 'PyTorch', description: 'Deep learning framework with dynamic computation' },
-        { name: 'Keras', description: 'High-level neural networks API' },
-        { name: 'Scikit-learn', description: 'Machine learning library for Python' },
-        { name: 'NLTK', description: 'Natural Language processing toolkit' },
-        { name: 'SpaCy', description: 'Industrial-strength NLP library' }
+        { name: 'Pandas', description: 'Data manipulation & analysis' },
+        { name: 'NumPy', description: 'Basic numerical computing' },
+        { name: 'Matplotlib', description: 'Simple data visualization' },
+        { name: 'Data Cleaning', description: 'Preparing data for analysis' },
+        { name: 'CSV/JSON', description: 'Working with data formats' },
+        { name: 'Basic SQL', description: 'Database queries & management' }
       ]
     },
     {
       icon: Database,
-      title: 'Data Science & Analytics',
+      title: 'UI/UX Design',
       skills: [
-        { name: 'Pandas', description: 'Data manipulation & analysis library' },
-        { name: 'NumPy', description: 'Numerical computing with arrays' },
-        { name: 'Matplotlib', description: 'Data visualization library' },
-        { name: 'Seaborn', description: 'Statistical data visualization' },
-        { name: 'Plotly', description: 'Interactive graphing library' },
-        { name: 'OpenCV', description: 'Computer vision & image processing' }
+        { name: 'Figma', description: 'Interface design & prototyping tool' },
+        { name: 'Wireframing', description: 'Basic layout sketching' },
+        { name: 'Prototyping', description: 'Interactive mockup creation' },
+        { name: 'User Flows', description: 'Mapping user journeys' },
+        { name: 'Responsive Design', description: 'Mobile-friendly layouts' },
+        { name: 'Color Theory', description: 'Basic color palette selection' }
       ]
     },
     {

@@ -5,16 +5,16 @@ export default function Services() {
     {
       icon: Lightbulb,
       iconColor: 'from-purple-500 to-pink-500',
-      title: 'AI Project Development',
-      description: 'End-to-end AI solution development from concept to production deployment.',
+      title: 'AI Integration & Solutions',
+      description: 'Building simple AI-powered features using existing models and APIs.',
       keyFeatures: [
-        'Machine Learning Model Development',
-        'Computer Vision & NLP Solutions',
-        'MLOps Pipeline Implementation',
-        'Performance Optimization & Scaling'
+        'ChatGPT & OpenAI API Integration',
+        'Pre-trained Model Implementation',
+        'Data Analysis & Visualization',
+        'Chatbot Development'
       ],
-      technologies: ['Python', 'TensorFlow', 'PyTorch', 'MLflow', 'Docker', 'Kubernetes'],
-      deliverables: 'Production-ready AI models with comprehensive documentation'
+      technologies: ['Python', 'OpenAI API', 'Scikit-learn', 'Pandas', 'LangChain', 'Hugging Face'],
+      deliverables: 'Functional AI features integrated into your applications'
     },
     {
       icon: Rocket,

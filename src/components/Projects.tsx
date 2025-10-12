@@ -6,28 +6,54 @@ export default function Projects() {
 
   const filters = [
     { label: 'All', count: 5 },
-    { label: 'Web', count: 4 },
-    { label: 'Backend', count: 3 },
+    { label: 'Web', count: 5 },
+    { label: 'Backend', count: 4 },
     { label: 'DevOps', count: 2 },
-    { label: 'Machine Learning', count: 1 },
-    { label: 'Desktop', count: 2 },
+    { label: 'Machine Learning', count: 2 },
+    { label: 'AI', count: 2 },
     { label: 'E-Commerce', count: 1 },
-    { label: 'IoT', count: 1 }
+    { label: 'Security', count: 1 }
   ];
 
   const projects = [
+    {
+      title: 'ARGUS - Smart Home Security Platform',
+      description: 'Development of a home security platform with AI detection (face, movement) using Hugging Face API, real-time alerts (email/SMS), and interactive dashboard.',
+      image: 'https://images.pexels.com/photos/8185634/pexels-photo-8185634.jpeg?auto=compress&cs=tinysrgb&w=800',
+      tags: ['Web', 'Backend', 'AI', 'Security'],
+      technologies: ['Django', 'React', 'SQLite', 'Twilio', 'Hugging Face'],
+      period: 'September 2025 - November 2025',
+      badge: 'Latest',
+      badgeColor: 'from-red-500 to-orange-500',
+      iconBg: 'from-red-600/20 to-orange-600/20',
+      github: '#',
+      demo: '#'
+    },
+    {
+      title: 'HealUp - Student & Teacher Wellness Platform',
+      description: 'Design and development of a wellness web platform for students and teachers, integrating AI modules (prediction, recommendations, intelligent assistant) with automated CI/CD pipeline, Docker, and Grafana monitoring.',
+      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+      tags: ['Web', 'Backend', 'DevOps', 'AI', 'Machine Learning'],
+      technologies: ['Laravel', 'MySQL', 'TailwindCSS', 'Docker', 'GitHub Actions', 'Grafana', 'AI/ML'],
+      period: 'September 2025 - November 2025',
+      badge: 'Latest',
+      badgeColor: 'from-green-500 to-teal-500',
+      iconBg: 'from-green-600/20 to-teal-600/20',
+      github: '#',
+      demo: '#'
+    },
     {
       title: 'Kanz - Intelligent Accounting Solution',
       description: 'Development of an intelligent accounting management solution for Tunisian SMEs, integrating automated functionalities and a revenue prediction module based on machine learning.',
       image: 'https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=800',
       tags: ['Web', 'Backend', 'Machine Learning'],
-      technologies: ['React.js', 'Express.js', 'MongoDB', 'Socket.IO', 'ML', 'RAG Chatbot'],
+      technologies: ['React.js', 'Express.js', 'MongoDB', 'Socket.IO', 'Machine Learning', 'RAG Chatbot'],
       period: 'January 2025 - May 2025',
       badge: 'Featured',
       badgeColor: 'from-purple-500 to-pink-500',
       iconBg: 'from-purple-600/20 to-pink-600/20',
-      github: 'https://github.com/hamzaayarii',
-      demo: 'https://portfolio-liard-two-nd8q6jb4em.vercel.app'
+      github: '#',
+      demo: '#'
     },
     {
       title: 'DevOps CI/CD Project',
@@ -37,49 +63,23 @@ export default function Projects() {
       technologies: ['Jenkins', 'Maven', 'JUnit', 'Karma/Jasmine', 'Docker', 'SonarQube', 'Prometheus', 'Grafana'],
       period: 'February 2025 - April 2025',
       badge: 'Featured',
-      badgeColor: 'from-green-500 to-emerald-500',
-      iconBg: 'from-green-600/20 to-emerald-600/20',
-      github: 'https://github.com/hamzaayarii',
-      demo: 'https://portfolio-liard-two-nd8q6jb4em.vercel.app'
+      badgeColor: 'from-blue-500 to-cyan-500',
+      iconBg: 'from-blue-600/20 to-cyan-600/20',
+      github: '#',
+      demo: '#'
     },
     {
-      title: 'Batah.tn - E-Commerce Platform',
+      title: 'Batah.tn - E-Commerce Web & Mobile Platform',
       description: 'Design and development of integrated applications for stock and order management (Java desktop and Symfony web), with payment integration, interactive maps, and notifications.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
       tags: ['Web', 'Backend', 'E-Commerce'],
-      technologies: ['Java', 'Symfony', 'MySQL', 'Git', 'Google Maps API', 'Stripe'],
+      technologies: ['Java', 'Symfony', 'MySQL', 'Git', 'Google Maps API', 'Stripe', 'Flutter'],
       period: 'January 2024 - May 2024',
       badge: '',
-      badgeColor: 'from-cyan-500 to-blue-500',
-      iconBg: 'from-cyan-600/20 to-blue-600/20',
-      github: 'https://github.com/hamzaayarii',
-      demo: 'https://portfolio-liard-two-nd8q6jb4em.vercel.app'
-    },
-    {
-      title: 'Smart Technical Visit Center',
-      description: 'Development of a desktop application for personnel management and administrative optimization, with hardware integration via Arduino.',
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Desktop', 'IoT'],
-      technologies: ['Qt', 'C++', 'Arduino', 'SQL'],
-      period: 'January 2023 - May 2023',
-      badge: '',
-      badgeColor: 'from-red-500 to-orange-500',
-      iconBg: 'from-red-600/20 to-orange-600/20',
-      github: 'https://github.com/hamzaayarii',
-      demo: ''
-    },
-    {
-      title: 'Chifouri - Vehicle Rental Platform',
-      description: 'Creation of a vehicle reservation website with drivers, based on UML modeling and relational database management.',
-      image: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Web', 'Backend'],
-      technologies: ['HTML', 'CSS', 'PHP', 'MySQL', 'GitHub'],
-      period: 'January 2022 - May 2022',
-      badge: '',
-      badgeColor: 'from-indigo-500 to-purple-500',
-      iconBg: 'from-indigo-600/20 to-purple-600/20',
-      github: 'https://github.com/hamzaayarii',
-      demo: ''
+      badgeColor: 'from-orange-500 to-yellow-500',
+      iconBg: 'from-orange-600/20 to-yellow-600/20',
+      github: '#',
+      demo: '#'
     }
   ];
 
