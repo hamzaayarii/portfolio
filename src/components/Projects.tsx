@@ -52,7 +52,7 @@ export default function Projects() {
       badge: 'Featured',
       badgeColor: 'from-purple-500 to-pink-500',
       iconBg: 'from-purple-600/20 to-pink-600/20',
-      github: '#',
+      github: 'https://github.com/hamzaayarii/AccountingManagementApp',
       demo: '#'
     },
     {
@@ -65,7 +65,7 @@ export default function Projects() {
       badge: 'Featured',
       badgeColor: 'from-blue-500 to-cyan-500',
       iconBg: 'from-blue-600/20 to-cyan-600/20',
-      github: '#',
+      github: 'https://github.com/DevOps-Kaddem',
       demo: '#'
     },
     {
@@ -78,7 +78,7 @@ export default function Projects() {
       badge: '',
       badgeColor: 'from-orange-500 to-yellow-500',
       iconBg: 'from-orange-600/20 to-yellow-600/20',
-      github: '#',
+      github: 'https://github.com/hamzaayarii/batah_3A16_Pidev_JavaFX',
       demo: '#'
     }
   ];

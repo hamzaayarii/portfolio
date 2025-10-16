@@ -6,8 +6,17 @@ export default function Certifications() {
       name: 'Hamza Ayari',
       date: 'Earned Credential',
       link: 'https://learn.microsoft.com/fr-fr/users/hamzaayari-7517/achievements/45van35k',
-      image: '/certificate.png',
+      image: '/azure-certificate.png',
       gradient: 'from-cyan-400 to-blue-500'
+    },
+    {
+      title: 'Hedera Hashgraph Certification',
+      issuer: 'Hedera',
+      name: 'Hamza Ayari',
+      date: 'Earned Credential',
+      link: '/hedera-hashgraphe.pdf',
+      image: '/hedera-certificate.png',
+      gradient: 'from-purple-400 to-pink-500'
     }
   ];
 
