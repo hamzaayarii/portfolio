@@ -26,8 +26,8 @@ export default function Projects() {
       badge: 'Latest',
       badgeColor: 'from-red-500 to-orange-500',
       iconBg: 'from-red-600/20 to-orange-600/20',
-      github: '#',
-      demo: '#'
+      github: 'https://github.com/hamzaayarii/argus.git',
+      demo: 'https://www.youtube.com/watch?v=T37hdKtyt8k'
     },
     {
       title: 'HealUp - Student & Teacher Wellness Platform',
@@ -39,8 +39,8 @@ export default function Projects() {
       badge: 'Latest',
       badgeColor: 'from-green-500 to-teal-500',
       iconBg: 'from-green-600/20 to-teal-600/20',
-      github: '#',
-      demo: '#'
+      github: 'https://github.com/hamzaayarii/HealUp-1.git',
+      demo: 'https://www.youtube.com/watch?v=XSeVY815mc4&t=8s'
     },
     {
       title: 'Kanz - Intelligent Accounting Solution',
@@ -53,7 +53,7 @@ export default function Projects() {
       badgeColor: 'from-purple-500 to-pink-500',
       iconBg: 'from-purple-600/20 to-pink-600/20',
       github: 'https://github.com/hamzaayarii/AccountingManagementApp',
-      demo: '#'
+      demo: 'https://github.com/hamzaayarii/AccountingManagementApp.git'
     },
     {
       title: 'DevOps CI/CD Project',
@@ -123,7 +123,7 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <div
               key={index}

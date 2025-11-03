@@ -41,18 +41,6 @@ export default function Skills() {
     },
     {
       icon: Database,
-      title: 'Data & Visualization',
-      skills: [
-        { name: 'Pandas', description: 'Data manipulation & analysis' },
-        { name: 'NumPy', description: 'Basic numerical computing' },
-        { name: 'Matplotlib', description: 'Simple data visualization' },
-        { name: 'Data Cleaning', description: 'Preparing data for analysis' },
-        { name: 'CSV/JSON', description: 'Working with data formats' },
-        { name: 'Basic SQL', description: 'Database queries & management' }
-      ]
-    },
-    {
-      icon: Database,
       title: 'UI/UX Design',
       skills: [
         { name: 'Figma', description: 'Interface design & prototyping tool' },
@@ -64,15 +52,29 @@ export default function Skills() {
       ]
     },
     {
-      icon: Cloud,
-      title: 'Cloud & DevOps',
+      icon: Server,
+      title: 'Automation & IaC',
       skills: [
-        { name: 'Azure ML', description: 'Microsoft cloud ML platform' },
-        { name: 'AWS SageMaker', description: 'Amazon ML model training & deployment' },
+        { name: 'Ansible', description: 'Configuration management & automation' },
+        { name: 'Terraform', description: 'Infrastructure as Code provisioning' }
+      ]
+    },
+    {
+      icon: Server,
+      title: 'Orchestration & Containerization',
+      skills: [
         { name: 'Docker', description: 'Containerization platform' },
-        { name: 'Jenkins', description: 'CI/CD automation server' },
-        { name: 'MLflow', description: 'ML lifecycle management platform' },
-        { name: 'Databricks', description: 'Unified analytics platform' }
+        { name: 'Kubernetes', description: 'Container orchestration system' }
+      ]
+    },
+    {
+      icon: Cloud,
+      title: 'Cloud Providers',
+      skills: [
+        { name: 'AWS', description: 'Amazon Web Services cloud platform' },
+        { name: 'Azure', description: 'Microsoft cloud computing services' },
+        { name: 'OpenStack', description: 'Open-source cloud infrastructure platform' },
+        { name: 'Oracle Cloud Infrastructure', description: 'Oracle enterprise cloud services' }
       ]
     }
   ];

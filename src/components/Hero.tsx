@@ -65,7 +65,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-teal-500/30 rounded-full blur-2xl animate-pulse"></div>
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-cyan-500/50 shadow-2xl shadow-cyan-500/50 transform hover:scale-105 transition-all duration-500">
               <img
-                src="/hamza-pic2.png"
+                src="/hamza.png"
                 alt="Hamza Ayari"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -102,12 +102,11 @@ export default function Hero() {
           {/* Professional Description */}
           <div className="max-w-4xl">
             <p className="text-gray-300 text-base md:text-lg lg:text-xl leading-relaxed">
-              Full Stack Developer and DevOps Engineering student, with expertise in <span className="text-cyan-400 font-semibold">React</span>, 
-              <span className="text-cyan-400 font-semibold"> Node.js</span>, 
-              <span className="text-cyan-400 font-semibold"> Docker</span>, and 
-              <span className="text-cyan-400 font-semibold"> AWS</span>. 
-              Proven track record of deploying production-ready applications, developing intelligent automation systems, 
-              and architecting scalable cloud infrastructure. Software Engineering student with hands-on experience.
+              Hey! I’m Hamza Ayari, a Software Engineering student who loves building modern 
+              web apps and exploring the world of DevOps. I enjoy working with tools like 
+              React, Spring Boot, Laravel, Docker, and Kubernetes to turn ideas into scalable, 
+              real-world projects. I’m always curious to learn new tech, automate processes, 
+              and create smooth, reliable user experiences.
             </p>
           </div>
 
